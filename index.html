@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIENVENIDOS Cine TECNM</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-image: url('IMAGENES/tecnm.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            position: relative;
+        }
+        header {
+            background-image: url('IMAGENES/cabeza.JPG');
+            background-size: cover;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        header h1 {
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        nav {
+            background-color: #444;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        section {
+            padding: 20px;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-image: url('IMAGENES/tecnm.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        footer p {
+            margin: 0;
+        }
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .btn-container {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        .rectangle {
+            width: 200px;
+            height: 300px;
+            background-color: #ccc;
+            margin: 0 auto;
+            margin-top: 20px;
+            text-align: center;
+            line-height: 300px;
+            float: left;
+            margin-right: 20px;
+        }
+        .rectangle img {
+            max-width: 100%;
+            max-height: 100%;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>TECNM CINE (ITIZ)</h1>
+    </header>
+    <nav>
+        <a href="#">Inicio</a>
+        <a href="#">Carrito de Compras</a>
+    </nav>
+    <div class="btn-container">
+        <button class="btn" onclick="cambiarColores()">Cambiar de Colores</button>
+        <button class="btn" onclick="aumentarTexto()">Aumentar zoom</button>
+        <button class="btn" onclick="cambiarColorTexto()">Cambiar Color de Texto</button>
+    </div>
+    <section>
+        <div class="content">
+            <h2>CARTELERA</h2>
+            <p>Ven y ve las películas de estreno</p>
+            <div class="rectangle">
+                <img src="IMAGENES/GXK.JPG" alt="Imagen" />
+            </div>
+            <div class="rectangle">
+                <img src="IMAGENES/po.JPG" alt="Imagen" />
+            </div>
+            <div class="rectangle">
+                <img src="IMAGENES/goku.JPG" alt="Imagen" />
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; TECNM Iztapalapa, Telecomunicaciones, Chinampac</p>
+    </footer>
+
+    <script>
+        let tamanoTexto = 16;
+
+        function aumentarTexto() {
+            tamanoTexto += 2;
+            document.body.style.fontSize = tamanoTexto + "px";
+        }
+
+        function cambiarColores() {
+            document.body.style.backgroundColor = getRandomColor();
+        }
+
+        function cambiarColorTexto() {
+            const colorTexto = getRandomColor();
+            document.body.style.color = colorTexto;
+        }
+
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+    </script>
+</body>
+</html>
